@@ -1,6 +1,6 @@
 const {prompt} = require('../../modules/prompt');
 
-console.log('procent(n, p)');
+console.log('calculeaza (n + p%)');
 
 prompt([
 	'n = ',
@@ -9,12 +9,11 @@ prompt([
 
 function run(answers) {
 	let [n, p] = answers.map(Number);
-	let r = procent(n, p);
-	console.log(r);
+	let r = calc(n, p);
+	console.log(`(${n} + ${p}%) =`, r);
 }
 
-function procent(n, p) {
-	let procent = n * p / 100;
-	let result = n + procent;
-	return result;
+function calc(n, p) {
+	p /= 100;
+	return n + p * n;
 }

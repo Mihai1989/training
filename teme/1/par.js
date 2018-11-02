@@ -1,6 +1,6 @@
 const {prompt} = require('../../modules/prompt');
 
-console.log('sa se determine daca n este par');
+console.log('par(n)');
 
 prompt([
 	'n = ',
@@ -13,5 +13,10 @@ function run(answers) {
 }
 
 function par(n) {
-	return !(n % 2);
+	return n % 2 == 0;
+	/*if (n % 2 == 0) {
+		return true;
+	} else {
+		return false;
+	}*/
 }

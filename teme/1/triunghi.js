@@ -1,6 +1,6 @@
 const {prompt} = require('../../modules/prompt');
 
-console.log('verifica daca (a, b, c) pot fi laturile unui triunghi');
+console.log('triunghi(a, b, c)');
 
 prompt([
 	'a = ',
@@ -10,10 +10,10 @@ prompt([
 
 function run(answers) {
 	let [a, b, c] = answers.map(Number);
-	let r = triangle(a, b, c);
-	console.log(`(${a}, ${b}, ${c}) =>`, r ? 'adevarat' : 'fals');
+	let r = triunghi(a, b, c);
+	console.log(r ? 'adevarat' : 'fals');
 }
 
-function triangle(a, b, c) {
+function triunghi(a, b, c) {
 	return a < b + c && b < a + c && c < a + b;
 }

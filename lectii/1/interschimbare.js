@@ -1,6 +1,6 @@
 const {prompt} = require('../../modules/prompt');
 
-console.log('interschimbare(a, b)');
+console.log('interschimba valorile a si b');
 
 prompt([
 	'a = ',
@@ -8,10 +8,10 @@ prompt([
 ]).then(run);
 
 function run(answers) {
-	var c;
-	let [a, b] = answers.map(Number);
-	c = a;
+	let aux, [a, b] = answers.map(Number);
+	aux = a;
 	a = b;
-	b = c;
-	console.log(a, b);
+	b = aux;
+	//[a, b] = [b, a];
+	console.log(`a = ${a}, b = ${b}`);
 }
