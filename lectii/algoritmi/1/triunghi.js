@@ -1,4 +1,4 @@
-const {prompt} = require('../../modules/prompt');
+const {prompt} = require('../../../modules/prompt');
 
 console.log('verifica daca (a, b, c) pot fi laturile unui triunghi');
 

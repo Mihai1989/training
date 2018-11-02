@@ -1,0 +1,7 @@
+se da un numar N. sa se calculeze suma tuturor numerelor naturale mai mici sau egale cu N
+se dau 2 numere N si M. sa se calculeze suma tuturor numerelor naturale mai mici sau egale cu N ignorand multiplii de M
+sa se citeasca numere si sa se calculeze suma acestora pana cand suma devine mai mare sau egala cu 100
+se dau 2 numere A si B. sa se determine cel mai mic numar mai mare decat A care este divizibil cu B
+se da un numar N. sa se determine daca este prim
+Să se scrie un program care verifică dacă un număr natural citit de la tastatură este pătrat perfect.
+Se dau două numere naturale și un simbol pentru una dintre operațiile +, -, *, /. Să se determine rezultatul operației aplicate pentru cele două numere.

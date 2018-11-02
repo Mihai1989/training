@@ -1,4 +1,4 @@
-const {prompt} = require('../../modules/prompt');
+const {prompt} = require('../../../modules/prompt');
 
 console.log('gaseste x unde (ax + b = 0)');
 
