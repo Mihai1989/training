@@ -4,7 +4,7 @@
 ** se dau 2 numere N si P. sa se actualizeze N cu un procent P
 ** se dau 2 numere A si B. sa se rezolve ecuatia de grad 1 (ax + b = 0)
 ** se dau 2 numere A si B. sa se interschimbe A cu B
-se dau 3 numere A, B si C. se sa determine media lor
+** se dau 3 numere A, B si C. se sa determine media lor
 se dau 3 numere A, B si C. se sa determine valoarea minima
 se dau 2 numere A si B. se sa determine aria si perimetrul dreptunghiului cu laturile de valoare A si B
 se dau 2 numere A si B. se sa determine valoarea care trebuie adunata la A pentru a obtine triplul lui B
