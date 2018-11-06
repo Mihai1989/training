@@ -1,21 +1,27 @@
-const {prompt} = require('../../modules/prompt');
+const {prompt} = require('../../../modules/prompt');
 
-console.log('valMin');
+console.log('valMin(a, b, c)');
 
 prompt([
 	'a = ',
 	'b = ',
-	'c = '
+	'c = ',
 ]).then(run);
 
 function run(answers) {
 	let [a, b, c] = answers.map(Number);
 	let r = valMin(a, b, c);
-	console.log(r);
+	console.log('The min val is ' + r);
 }
 
 function valMin(a, b, c) {
-	for (var i = 0; i < [a, b, c].length; i++) {
-		array[i]
+	if (a < b && a < c) {
+		return a;
+	}
+	if (b < a && b < c) {
+		return b;
+	}
+	if (c < a && c < b) {
+		return c;
 	}
 }

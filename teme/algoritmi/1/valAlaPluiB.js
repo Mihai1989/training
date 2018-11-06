@@ -1,6 +1,6 @@
 const {prompt} = require('../../../modules/prompt');
 
-console.log('interschimbare(a, b)');
+console.log('valAlaPluiB(a, b)');
 
 prompt([
 	'a = ',
@@ -8,10 +8,12 @@ prompt([
 ]).then(run);
 
 function run(answers) {
-	var c;
 	let [a, b] = answers.map(Number);
-	c = a;
-	a = b;
-	b = c;
-	console.log(a, b);
+	let r = valAlaPluiB(a, b);
+	console.log('valAlaPluiB ' + r);
+}
+
+function valAlaPluiB(a, b) {
+	let c = a * b;
+	return c;
 }
