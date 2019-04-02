@@ -61,6 +61,22 @@ function add_chitante($produse, $pret){
     return true;
 }
 
+function get_facturi($id) {
+  include 'connection.php';
+
+  $sql = 'SELECT * FROM facturi WHERE id = ?';
+
+  try {
+      $results = $db->prepare($sql);
+      $results->bindValue(1, $id, PDO::PARAM_INT);
+      $results->execute();
+  } catch (Exception $e) {
+      echo "Error!: " . $e->getMessage() . "<br />";
+      return false;
+  }
+  return $results->fetch();
+}
+
 // delete the product
 function delete_facturi($id){
     include 'connection.php';
@@ -78,36 +94,28 @@ function delete_facturi($id){
     return true;
 }
 
-function get_facturi($id) {
+function update_facturi($nume, $pret, $id = null) {
   include 'connection.php';
+    if ($id) {
+      $sql = 'UPDATE facturi SET nume = ?, pret = ? WHERE id = ?';
+    }
+    // } else {
+    //     $sql = 'INSERT INTO facturi(nume, pret) VALUES(?, ?)';
+    // }
 
-  $sql = 'SELECT * FROM facturi WHERE id = ?';
-
-  try {
-      $results = $db->prepare($sql);
-      $results->bindValue(1, $id, PDO::PARAM_INT);
-      $results->execute();
-  } catch (Exception $e) {
-      echo "Error!: " . $e->getMessage() . "<br />";
-      return false;
-  }
-  return $results->fetch();
-}
-
-function update_facturi($nume, $pret, $id) {
-  include 'connection.php';
-
-  $sql = 'UPDATE facturi SET nume = ?, pret = ? WHERE id = ?';
-
-  try {
-      $results = $db->prepare($sql);
-      $results->bindValue(1, $id, PDO::PARAM_INT);
-      $results->execute();
-  } catch (Exception $e) {
-      echo "Error!: " . $e->getMessage() . "<br />";
-      return false;
-  }
-  return $results->fetch();
+    try {
+        $results = $db->prepare($sql);
+        $results->bindValue(1, $nume, PDO::PARAM_STR);
+        $results->bindValue(2, $pret, PDO::PARAM_INT);
+        if ($id) {
+          $results->bindValue(3, $id, PDO::PARAM_INT);
+        }
+        $results->execute();
+    } catch (Exception $e) {
+        echo "Error!: " . $e->getMessage() . "<br />";
+        return false;
+    }
+    return true;
 }
 
 ?>

@@ -14,6 +14,7 @@ if (isset($_POST['delete'])) {
     }
 }
 
+
 if (isset($_GET['msg'])) {
     $error_message = trim(filter_input(INPUT_GET, 'msg', FILTER_SANITIZE_STRING));
 }
@@ -52,7 +53,7 @@ include 'inc/header.php';
                     echo "<td>" . $item['Pret'] . "</td>";
                     echo "<td>" . $item['Data'] . "</td>";
                     echo "<td>";
-                    echo "<a href='update.php?id=" . $item['id'] . "' class='btn btn-primary'>Edit</a>";
+                    echo "<a href='facturi.php?id=" . $item['id'] . "' class='btn btn-primary'>Edit</a>";
                     echo "</td>";
                     echo "<td>";
                     echo "<form method='post' action='lista_facturi.php' onsubmit=\"return confirm('Are you sure you want tot delete this project?');\">\n";

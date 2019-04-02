@@ -14,7 +14,7 @@ include 'inc/header.php';
       <div class="actions-wrapper">
         <ul class="actions">
           <li class="actions-item">
-            <a class="actions-link" href="task.php">
+            <a class="actions-link" href="facturi.php">
               <span class="actions-icon">
                 <svg viewbox="0 0 64 64"><use xlink:href="#task_icon"></use></svg>
               </span>
@@ -22,7 +22,7 @@ include 'inc/header.php';
             </a>
           </li>
           <li class="actions-item">
-            <a class="actions-link" href="project.php">
+            <a class="actions-link" href="chitante.php">
               <span class="actions-icon">
                 <svg viewbox="0 0 64 64"><use xlink:href="#project_icon"></use></svg>
               </span>

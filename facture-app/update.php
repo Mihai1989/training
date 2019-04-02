@@ -5,36 +5,21 @@ $pageTitle = "Project | Time Tracker";
 $page = "projects";
 $nume = $pret = '';
 
-if (isset($_GET['id'])) {
-    list($id, $nume, $pret) = get_facturi(filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT));
-}
-
-if (!empty($id)) {
-  echo $nume;
-  echo $pret;
-  echo "Update";
-} else {
-  echo "Add";
-}
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_NUMBER_INT);
-    $nume = trim(filter_input(INPUT_POST, 'nume', FILTER_SANITIZE_STRING));
-    $pret = trim(filter_input(INPUT_POST, 'pret', FILTER_SANITIZE_STRING));
-
-    if (empty($nume) || empty($pret)) {
-        $error_message = 'Please fill in the required fields: nume, pret';
-    } else {
-        if (update_project($nume, $pret, $id)) {
-            header('Location: list_facturi.php');
-            exit;
-        } else {
-            $error_message = 'Could not add project';
-        }
-    }
-}
 
 include 'inc/header.php';
+
+
+
+$id = $_GET['id'];
+echo $id;
+$sql = "SELECT * from facturi where id='$id'";
+
+$rows = $db->query($sql);
+echo "string1";
+$row = $rows->fetch_assoc();
+echo "string2";
+var_dump($row);
+echo "string3";
 ?>
 
 <div class="section page">
@@ -57,11 +42,6 @@ include 'inc/header.php';
                         <td><input type="number" id="pret" name="pret" value="<?php echo $pret; ?>" /></td>
                     </tr>
                 </table>
-                <?php
-                if (!empty($id)) {
-                    echo '<input type="hidden" name="id" value="' . $id . '" />';
-                }
-                ?>
                 <input class="button button--primary button--topic-php" type="submit" value="Submit" />
             </form>
         </div>
